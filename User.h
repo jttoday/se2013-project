@@ -18,6 +18,9 @@ class AdditionInfo;
 class LoginInfo {
 public:
 	LoginInfo();
+	LoginInfo(const string& username, const string& password)
+		:_username(username), _password(password)
+	{  }
 	LoginInfo& setPassword(const string& password);
 	LoginInfo& setUsername(const string& username);
 	const string& username() const;
@@ -30,6 +33,9 @@ private:
 class BasicInfo {
 public:
 	BasicInfo();
+	BasicInfo(const string& name, Gender gender, const string& birth)
+		:_name(name), _gender(gender), _birth(birth)
+	{ }
 	BasicInfo& setName(const string& name);
 	BasicInfo& setGender(Gender gender);
 	BasicInfo& setBirth(const string& birth);
@@ -49,7 +55,9 @@ public:
 	User& follow(User& following);
 	User& unfollow(User& following);
 
+	LoginInfo& loginInfo() ;
 	const LoginInfo& loginInfo() const;
+	BasicInfo& basicInfo() ;
 	const BasicInfo& basicInfo() const;
 
 	User& addMicropost(const Micropost& micropost);

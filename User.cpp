@@ -32,9 +32,19 @@ User& User::unfollow(User& following)
 	return *this;
 }
 
+LoginInfo& User::loginInfo()
+{
+	return _loginInfo;
+}
+
 const LoginInfo& User::loginInfo() const
 {
 	return _loginInfo;
+}
+
+BasicInfo& User::basicInfo()
+{
+	return _basicInfo;
 }
 
 const BasicInfo& User::basicInfo() const

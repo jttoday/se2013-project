@@ -33,3 +33,21 @@ User* UserManager::findByUsername(const string& username)
 	}
 	return NULL;
 }
+#include <iostream>
+using namespace std;
+
+User* UserManager::updateUser(User& user)
+{
+	user_it it;
+	string username = user.loginInfo().username();
+	for (it = allUsers.begin(); it != allUsers.end(); ++it)
+	{
+		if (it->loginInfo().username() == username)
+			break;
+	}
+	allUsers.push_back(user);
+	allUsers.erase(it);
+	return &allUsers.back();
+}
+
+

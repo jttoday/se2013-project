@@ -3,6 +3,9 @@
 #include "User.h"
 #include "Micropost.h"
 #include "UserManager.h"
+
+class UserManager;
+
 namespace SState{
 	enum ServiceState { signin, signup, homepage };
 }
@@ -23,6 +26,7 @@ private:
 	void showMyMicroposts();
 	void showMyInformation();
 	void serchOtherUser();
+	void updateInformation();
 	void deleteThisUser();
 	void logOut();
 
@@ -30,6 +34,8 @@ private:
 	void showInformation(User& user);
 	void showMicroposts(User& user);
 
+	void load();
+	void save(); 
 
 	typedef SState::ServiceState ServiceState;
 

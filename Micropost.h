@@ -13,6 +13,7 @@ class Micropost {
 public:
 	Micropost(User& owner);
 	Micropost(User& owner, const string& content);
+	string content() const;
 	Micropost& setContent(const string& content);
 	Micropost& operator=(const Micropost& rhs);
 	void inc(); 

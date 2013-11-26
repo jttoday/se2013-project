@@ -10,6 +10,11 @@ Micropost::Micropost(User& owner,const string& content)
 	:_owner(owner), _content(content)
 { }
 
+string Micropost::content() const
+{
+	return _content;
+}
+
 Micropost& Micropost::setContent(const string& content)
 {
 	_content = content;
